@@ -35,6 +35,7 @@ export default {
         handle: this.handle,
         animation: this.animate,
         onStart: () => {
+          this.$children[0].$el.toggleRowExpansion('row');
           this.$emit("drag");
         },
         onEnd: ({ newIndex, oldIndex }) => {
