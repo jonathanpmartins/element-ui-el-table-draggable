@@ -35,6 +35,10 @@ export default {
         handle: this.handle,
         animation: this.animate,
         onStart: () => {
+          const list = this.$children[0].data;
+          for (let i = 0; i < list.length; i++) {
+            this.$children[0].toggleRowExpansion(list[i], false);
+          }
           this.$emit("drag");
         },
         onEnd: ({ newIndex, oldIndex }) => {
